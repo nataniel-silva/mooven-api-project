@@ -1,0 +1,10 @@
+knp_snappy:
+    temporary_folder: '%kernel.project_dir%/tmp'
+    pdf:
+        enabled:    true
+        binary:     '%env(WKHTMLTOPDF_PATH)%'
+        options:    []
+    image:
+        enabled:    true
+        binary:     '%env(WKHTMLTOIMAGE_PATH)%'
+        options:    []

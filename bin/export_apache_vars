@@ -1,0 +1,7 @@
+#!/bin/bash
+while read line; do
+	if [[ ${line::1} == "#" || ${line::1} == "" || ${line:0:4} == "LANG" ]]; then
+		continue
+	fi
+	eval "export $line"
+done < /etc/sysconfig/httpd

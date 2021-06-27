@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" entityID="https://accounts.esales.com.br">
+<md:IDPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol" WantAuthnRequestsSigned="false">
+    <md:KeyDescriptor use="signing">
+        <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+            <ds:X509Data>
+                <ds:X509Certificate>MIIEITCCAwmgAwIBAgIJAPq/u+tSHuI7MA0GCSqGSIb3DQEBCwUAMIGmMQswCQYDVQQGEwJCUjEaMBgGA1UECAwRUmlvIEdyYW5kZSBkbyBTdWwxFTATBgNVBAcMDFBvcnRvIEFsZWdyZTEQMA4GA1UECgwHRS1TYWxlczEMMAoGA1UECwwDVVNDMRYwFAYDVQQDDA1zaW1wbGVzYW1scGhwMSwwKgYJKoZIhvcNAQkBFh15b3NoaWNoaWthLmFuZG9AZXNhbGVzLmNvbS5icjAeFw0xODAyMTkxNDAzMjdaFw0yODAyMTkxNDAzMjdaMIGmMQswCQYDVQQGEwJCUjEaMBgGA1UECAwRUmlvIEdyYW5kZSBkbyBTdWwxFTATBgNVBAcMDFBvcnRvIEFsZWdyZTEQMA4GA1UECgwHRS1TYWxlczEMMAoGA1UECwwDVVNDMRYwFAYDVQQDDA1zaW1wbGVzYW1scGhwMSwwKgYJKoZIhvcNAQkBFh15b3NoaWNoaWthLmFuZG9AZXNhbGVzLmNvbS5icjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAOlr2iELwSgenEIx7AocCeOkcjDQf5O6yDaXUcFnUObzITVX01rJZC2Sv1DvA7dnJ5xPhzJbxzg3+vRYlGJmoah6m6JVhmpvMsgZjjdKUJSTTTNMi6/8lNNqqm2lnH6bLhiGOZUBOCa3h7DcuFK6PqSk2xZL1Tt/3WAVioTsgcQih5LQeZ1fBJL4y3+rX1HcKFBzX9buM5U5TxK79PVzADekraIeGfK9NvYTFpyKcc+MwYM7ocYAkHaJyBaK22tjj5d3IMY6v88mXy8bKhUTE8y0FsqrCnwyW440Cc9vpcUHcKLST8nbLExgLplb4cViFgwWotL21MMURBbTH/EI5jECAwEAAaNQME4wHQYDVR0OBBYEFHObIWiOoYsIpfbAFB2UhuelrmrwMB8GA1UdIwQYMBaAFHObIWiOoYsIpfbAFB2UhuelrmrwMAwGA1UdEwQFMAMBAf8wDQYJKoZIhvcNAQELBQADggEBAFOhl9rG+aUOJDzDMD0TN5CkNyiWwND463ELeOSFbnRmOtrjut26vmlZZmhav7m+TEJ8F0skvfNHX5c90qkIbzN6wMA2twvNiXhw6l5JiCvdjVkb++uzBn6oq7/n273fw/R+aC36Edymk3TaGQWGpaLIkHWiXLEmq3AZ8ES2BlcM4prxSpJf5u5BWNoe2fGsKNvauqRG8uiWY6LvIPsXVFXXKWFiE8mW9g/Qk5qJQ0T6phnM+3OjGt+kivfvJyhk0WLJRGZlOuCbon++z+1nrvCaNJlUSXLp6Pxse4z2am0qPpjY0yKmh3Xm5wwMdpOu06aVdE+WOTUniQzfb47LvpQ=</ds:X509Certificate>
+            </ds:X509Data>
+        </ds:KeyInfo>
+    </md:KeyDescriptor>
+    <md:KeyDescriptor use="encryption">
+        <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+            <ds:X509Data>
+                <ds:X509Certificate>MIIEITCCAwmgAwIBAgIJAPq/u+tSHuI7MA0GCSqGSIb3DQEBCwUAMIGmMQswCQYDVQQGEwJCUjEaMBgGA1UECAwRUmlvIEdyYW5kZSBkbyBTdWwxFTATBgNVBAcMDFBvcnRvIEFsZWdyZTEQMA4GA1UECgwHRS1TYWxlczEMMAoGA1UECwwDVVNDMRYwFAYDVQQDDA1zaW1wbGVzYW1scGhwMSwwKgYJKoZIhvcNAQkBFh15b3NoaWNoaWthLmFuZG9AZXNhbGVzLmNvbS5icjAeFw0xODAyMTkxNDAzMjdaFw0yODAyMTkxNDAzMjdaMIGmMQswCQYDVQQGEwJCUjEaMBgGA1UECAwRUmlvIEdyYW5kZSBkbyBTdWwxFTATBgNVBAcMDFBvcnRvIEFsZWdyZTEQMA4GA1UECgwHRS1TYWxlczEMMAoGA1UECwwDVVNDMRYwFAYDVQQDDA1zaW1wbGVzYW1scGhwMSwwKgYJKoZIhvcNAQkBFh15b3NoaWNoaWthLmFuZG9AZXNhbGVzLmNvbS5icjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAOlr2iELwSgenEIx7AocCeOkcjDQf5O6yDaXUcFnUObzITVX01rJZC2Sv1DvA7dnJ5xPhzJbxzg3+vRYlGJmoah6m6JVhmpvMsgZjjdKUJSTTTNMi6/8lNNqqm2lnH6bLhiGOZUBOCa3h7DcuFK6PqSk2xZL1Tt/3WAVioTsgcQih5LQeZ1fBJL4y3+rX1HcKFBzX9buM5U5TxK79PVzADekraIeGfK9NvYTFpyKcc+MwYM7ocYAkHaJyBaK22tjj5d3IMY6v88mXy8bKhUTE8y0FsqrCnwyW440Cc9vpcUHcKLST8nbLExgLplb4cViFgwWotL21MMURBbTH/EI5jECAwEAAaNQME4wHQYDVR0OBBYEFHObIWiOoYsIpfbAFB2UhuelrmrwMB8GA1UdIwQYMBaAFHObIWiOoYsIpfbAFB2UhuelrmrwMAwGA1UdEwQFMAMBAf8wDQYJKoZIhvcNAQELBQADggEBAFOhl9rG+aUOJDzDMD0TN5CkNyiWwND463ELeOSFbnRmOtrjut26vmlZZmhav7m+TEJ8F0skvfNHX5c90qkIbzN6wMA2twvNiXhw6l5JiCvdjVkb++uzBn6oq7/n273fw/R+aC36Edymk3TaGQWGpaLIkHWiXLEmq3AZ8ES2BlcM4prxSpJf5u5BWNoe2fGsKNvauqRG8uiWY6LvIPsXVFXXKWFiE8mW9g/Qk5qJQ0T6phnM+3OjGt+kivfvJyhk0WLJRGZlOuCbon++z+1nrvCaNJlUSXLp6Pxse4z2am0qPpjY0yKmh3Xm5wwMdpOu06aVdE+WOTUniQzfb47LvpQ=</ds:X509Certificate>
+            </ds:X509Data>
+        </ds:KeyInfo>
+    </md:KeyDescriptor>
+    <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://accounts.esales.com.br/sso/saml2/slo"/>
+    <md:NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</md:NameIDFormat>
+    <md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://accounts.esales.com.br/sso/saml2/request"/>
+</md:IDPSSODescriptor>
+<md:ContactPerson contactType="technical">
+    <md:GivenName>Suporte</md:GivenName>
+    <md:EmailAddress>suporte@esales.com.br</md:EmailAddress>
+</md:ContactPerson>
+</md:EntityDescriptor>

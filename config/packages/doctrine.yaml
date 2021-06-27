@@ -1,0 +1,81 @@
+parameters:
+    # Adds a fallback DATABASE_URL if the env var is not set.
+    # This allows you to run cache:warmup even if your
+    # environment variables are not available yet.
+    # You should not need to change this value.
+    env(DATABASE_URL): ''
+
+doctrine:
+    dbal:
+        default_connection: default
+        connections:
+            default:
+                driver: 'pdo_pgsql'
+                server_version: '10.4'
+                charset: utf8
+                url: '%env(resolve:DATABASE_URL)%'
+            autonomous:
+                driver: 'pdo_pgsql'
+                server_version: '10.4'
+                charset: utf8
+                url: '%env(resolve:DATABASE_URL)%'
+            log:
+                driver: 'pdo_pgsql'
+                server_version: '10.4'
+                charset: utf8
+                url: '%env(resolve:DATABASE_URL)%'
+    orm:
+        auto_generate_proxy_classes: '%kernel.debug%'
+        default_entity_manager: default
+        entity_managers:
+            default:
+                connection: default
+                naming_strategy: doctrine.orm.naming_strategy.underscore
+                auto_mapping: true
+                mappings:
+                    App:
+                        is_bundle: false
+                        type: annotation
+                        dir: '%kernel.project_dir%/src/Entity'
+                        prefix: 'App\Entity'
+                        alias: App
+                hydrators:
+                    CustomObjectHydrator: App\Hydrator\CustomObjectHydrator
+                dql:
+                    string_functions:
+                        unaccent: App\DQL\Unaccent
+                        to_char: App\DQL\ToChar
+                        date: App\DQL\Date
+                        get_conf_val: App\DQL\GetConfVal
+                    numeric_functions:
+                        round: App\DQL\Round
+            autonomous:
+                connection: autonomous
+                naming_strategy: doctrine.orm.naming_strategy.underscore
+                mappings:
+                    App:
+                        is_bundle: false
+                        type: annotation
+                        dir: '%kernel.project_dir%/src/Entity'
+                        prefix: 'App\Entity'
+                        alias: App
+                hydrators:
+                    CustomObjectHydrator: App\Hydrator\CustomObjectHydrator
+                dql:
+                    string_functions:
+                        unaccent: App\DQL\Unaccent
+                        to_char: App\DQL\ToChar
+                        date: App\DQL\Date
+                        get_conf_val: App\DQL\GetConfVal
+                    numeric_functions:
+                        round: App\DQL\Round
+            log:
+                connection: log
+                naming_strategy: doctrine.orm.naming_strategy.underscore
+                mappings:
+                    App:
+                        is_bundle: false
+                        type: annotation
+                        dir: '%kernel.project_dir%/src/Entity'
+                        prefix: 'App\Entity'
+                        alias: App

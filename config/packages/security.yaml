@@ -1,0 +1,44 @@
+security:
+    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    providers:
+        in_memory: { memory: ~ }
+        db_provider:
+            entity:
+                class: App\Entity\Common\User
+                property: uuidIdp
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        main:
+            stateless: true
+            anonymous: true
+#            light_saml_sp:
+#                provider: db_provider
+#                username_mapper: App\Security\SamlUsernameMapper
+#                #user_creator: user_creator  # name of the user creator service created in step 10
+#                login_path: /saml/login
+#                check_path: /saml/login_check
+#                default_target_path: /saml/login_success
+#                always_use_default_target_path: true # Sempre vai redirecionar para default_target_path em caso de sucesso
+#                require_previous_session: false
+#                force: false
+#                failure_path: /saml/login_failure
+            logout:
+                invalidate_session: true
+                path: /saml/logout
+                success_handler: App\Security\LogoutHandler
+
+            # activate different ways to authenticate
+
+            # http_basic: true
+            # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
+
+            # form_login: true
+            # https://symfony.com/doc/current/security/form_login_setup.html
+
+    # Easy way to control access for large sections of your site
+    # Note: Only the *first* access control that matches will be used
+    access_control:
+        #- { path: ^/news, roles: ROLE_ADMIN }
+        #- { path: ^/profile, roles: ROLE_USER }

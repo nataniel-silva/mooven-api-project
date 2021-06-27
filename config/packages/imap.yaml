@@ -1,0 +1,20 @@
+imap:
+  connections:
+    checking_inbox:
+      mailbox: "%env(CHECKING_MAILBOX)%"
+      username: "%env(CHECKING_USER)%"
+      password: "%env(CHECKING_PASS)%"
+      attachments_dir: "%env(CHECKING_ATTACH_DIR)%"
+      server_encoding: "%env(CHECKING_ENCODING)%"
+    unloading_point_inbox:
+      mailbox: "%env(UNLOADING_POINT_MAILBOX)%"
+      username: "%env(UNLOADING_POINT_USER)%"
+      password: "%env(UNLOADING_POINT_PASS)%"
+      attachments_dir: "%env(UNLOADING_POINT_ATTACH_DIR)%"
+      server_encoding: "%env(UNLOADING_POINT_ENCODING)%"
+    finance_payment_inbox:
+      mailbox: "%env(FINANCE_PAYMENT_MAILBOX)%"
+      username: "%env(FINANCE_PAYMENT_USER)%"
+      password: "%env(FINANCE_PAYMENT_PASS)%"
+      attachments_dir: "%env(FINANCE_PAYMENT_ATTACH_DIR)%"
+      server_encoding: "%env(FINANCE_PAYMENT_ENCODING)%"

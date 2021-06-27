@@ -1,0 +1,6 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+#lightsaml_sp:
+#    resource: "@LightSamlSpBundle/Resources/config/routing.yml"
+#    prefix: saml

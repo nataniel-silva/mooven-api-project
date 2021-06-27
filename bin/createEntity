@@ -1,0 +1,8 @@
+# Para utilizar o script: "bash createEntity Esquema tabelaAqui"
+# Primeira letra do esquema maíuscula, e da tabela tem que ser minúscula, seguir camelCase em ambas
+# Depois disso os arquivos vão estar na pasta tmp, no diretório raiz do projeto
+# O comando $(dirname "$0") obtem o caminho real do script fazendo com que o ele possa ser executado de qualquer local do ambiente.
+#!/bin/bash
+eval $(dirname "$0")/console doctrine:mapping:import App\\\\Entity\\\\$1 annotation --path=$(dirname "$0")/../tmp --filter="$1.$2" &&
+	 $(dirname "$0")/entityFixer.php $(dirname "$0")/../tmp/$1.$2.php &&
+	 rm $(dirname "$0")/../tmp/$1.$2.php

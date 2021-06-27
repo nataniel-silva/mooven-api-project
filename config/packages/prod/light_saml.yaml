@@ -1,0 +1,14 @@
+light_saml_symfony_bridge:
+    own:
+        entity_id: "%env(IDP_ESALES_SP_ID)%"
+        credentials:
+            -
+                certificate: "%env(IDP_ESALES_CERT)%"
+                key:         "%env(IDP_ESALES_KEY)%"
+                password:    ~
+    party:
+        idp:
+            files:
+                - "%kernel.root_dir%/../src/Security/Idp/%env(IDP_ESALES_METADATA)%"
+    #store:
+        #id_state: id_store  # name of id store service created in step 6

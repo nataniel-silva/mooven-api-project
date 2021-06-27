@@ -1,0 +1,9 @@
+doctrine_migrations:
+  migrations_paths:
+    'Migrations': '%kernel.project_dir%/src/Migrations'
+
+  storage:
+    table_storage:
+      table_name: common.doctrine_migrations
+
+  connection: default
