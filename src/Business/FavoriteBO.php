@@ -2,7 +2,7 @@
 
 namespace App\Business;
 
-use App\Entity\Common\Favorite;
+use App\Entity\Favorite;
 use App\Exception\BOException;
 
 class FavoriteBO implements BOInterface {
@@ -13,17 +13,21 @@ class FavoriteBO implements BOInterface {
 	 * @return \App\Entity\DefaultEntity
 	 * @throws \Exception
 	 */
-	public function saveActorFromArray(array $actorData): Favorite {
-		$isUpdate = $actorData['id'] ?? false;
+	public function saveFavoriteFromArray(array $favoriteData): Favorite {
+		$isUpdate = $favoriteData['id'] ?? false;
 		
-		if (!$isUpdate) {
-			if (empty($actorData['active'])) {
-				$actorData['active'] = true;
-			}
+		$favorite = $this->ef->getRepo(Favorite::class)->findOneByConf([
+			'alias' => 'f',
+			'where' => 'f.name = :name AND f.owner = :owner',
+			'params' => [':name' => $favoriteData['name'], ':owner' => $favoriteData['owner']]
+		]);
+		
+		if (!empty($favorite)) {
+			$favoriteData['id'] = $favorite->getId();
 		}
 
 		$fieldsUpdate = ['active'];
-		return $this->saveEntityFromArray($actorData, $fieldsUpdate, Favorite::class);
+		return $this->saveEntityFromArray($favoriteData, $fieldsUpdate, Favorite::class);
 	}
 
 }

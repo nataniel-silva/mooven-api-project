@@ -169,6 +169,7 @@ trait BOTrait {
 			if ($e instanceof BOException) {
 				throw $e;
 			}
+			dump($e->getMessage());
 			$this->throwError('entity.fails_to_save', $e);
 		}
 	}

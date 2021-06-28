@@ -30,11 +30,18 @@ class Favorite extends DefaultEntity {
 	 * @ORM\Column(name="name", type="string")
 	 */
 	private $name;
+	
+	/**
+	 * @var string
+	 *
+	 * @ORM\Column(name="owner", type="string")
+	 */
+	private $owner;
 
 	/**
 	 * @var string|null
 	 *
-	 * @ORM\Column(name="external_code", type="string")
+	 * @ORM\Column(name="html_url", type="string")
 	 */
 	private $htmlUrl;
 
@@ -60,6 +67,16 @@ class Favorite extends DefaultEntity {
 			'name' => [
 				'pk' => false,
 				'columnName' => 'name',
+				'columnType' => 'string',
+				'length' => null,
+				'precision' => null,
+				'scale' => null,
+				'nullable' => false,
+				'validationRule' => ['type' => Validator::STRING, 'requireFilled' => true]
+			],
+			'owner' => [
+				'pk' => false,
+				'columnName' => 'owner',
 				'columnType' => 'string',
 				'length' => null,
 				'precision' => null,
@@ -123,6 +140,15 @@ class Favorite extends DefaultEntity {
 	
 	public function setActive(bool $active): self {
 		$this->active = $active;
+		return $this;
+	}
+	
+	public function getOwner(): string {
+		return $this->owner;
+	}
+	
+	public function setOwner(string $owner): self {
+		$this->owner = $owner;
 		return $this;
 	}
 

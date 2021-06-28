@@ -16,9 +16,8 @@ class FavoriteController extends DefaultController
 		$rules = [
 			'name' => ['type' => Validator::STRING],
 			'htmlUrl' => ['type' => Validator::STRING],
+			'active' => ['type' => Validator::BOOLEAN, 'default' => true],
 		];
-
-		dump('211');
 
 		return $this->searchRequest(
 			[$this->ef->getRepo(Favorite::class), 'search'], 'f', $rules,
@@ -28,6 +27,7 @@ class FavoriteController extends DefaultController
 	
 	private function saveFavorite(bool $isInsert, FavoriteBO $favoriteBO) {
 		$rules = [
+			'owner' => ['type' => Validator::STRING, 'requireFilled' => true],
 			'name' => ['type' => Validator::STRING, 'requireFilled' => true],
 			'htmlUrl' => ['type' => Validator::STRING, 'requireFilled' => true],
 			'active' => ['type' => Validator::BOOLEAN, 'default' => true],
@@ -41,11 +41,13 @@ class FavoriteController extends DefaultController
 		
 		try {
 			$this->begin();
-			$favorite = $favoriteBO->saveActorFromArray($data);
+			$favorite = $favoriteBO->saveFavoriteFromArray($data);
 			$this->commit();
 			return $this->generateResponse($favorite->toArray());
 		} catch (\Exception $e) {
-			$this->rollback();
+			if ($this->inTransaction()) {
+				$this->rollback();
+			}
 			throw $e;
 		}
 	}
